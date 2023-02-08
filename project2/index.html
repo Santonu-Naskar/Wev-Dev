@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- navbar____________________________________________________________________________________ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand mb-0 h1" href="#">San Librarry</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" id="searchTxt" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid" id="show">
+    <!--  alert shows here -->
+  </div>
+  <!-- INPUT_____________________________________________________________________________________________ -->
+  <div class="container my-3">
+    <form>
+      <div class="row mb-3">
+        <label for="bookName" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="bookName" placeholder="Book Name">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="Author" class="col-sm-2 col-form-label">Author Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="Author" placeholder="Author Name">
+        </div>
+      </div>
+      <fieldset class="row mb-3">
+        <legend class="col-form-label col-sm-2 pt-0">Type</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="type" id="Fiction" value="Fiction" checked>
+            <label class="form-check-label" for="Fiction">
+              Fiction
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="type" id="Programming" value="Computer Programming">
+            <label class="form-check-label" for="Programming">
+              Computer Programming
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="type" id="CookingS" value="Cooking">
+            <label class="form-check-label" for="Cooking">
+              Cooking
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn btn-primary" id="addBtn">ADD Book</button>
+    </form>
+  </div>
+  <!-- DISPLAY CARDS_________________________________________________ -->
+  <div class="container">
+    <h1 class="mt-2">Your Books</h1>
+    <hr>
+  
+    <div class="container-fluid row" >
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">S_No.</th>
+            <th scope="col">bookName</th>
+            <th scope="col">Author</th>
+            <th scope="col">Type</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody  id="table">
+          <!-- INSERT TABLE IN THIS area -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+<!-- <script src="index1.js"></script> -->
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</html>
