@@ -1,0 +1,326 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles copy.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html" class="navbarMenu">
+            <div style="color:white">Calculator</div>
+        </a>
+    </div>
+    <div class="ultimateDiv">
+        <form class="mainDiv" id="myForm" onsubmit="myFunction()">
+
+            <div class="inpDiv">
+                <label for="dates">Effective Date</label>
+                <div class="f2">
+                    <input type="date" class="dates" name="dates" id="inputDate" required>
+                </div>
+            </div>
+            <div class="inpDiv">
+                <label for="experianceMod">Latest Experience Mod</label>
+                <div class="f2">
+                    <input type="number" placeholder="0.01 to 9.99" class="experienceModifier inp" id="experianceMod"
+                    min="0" max="9.99" step="0.01"  required>
+                </div>
+            </div>
+            <div class="inpDiv">
+                <label for="LCM" class="f1">LCM</label>
+                <div class="f2">
+                    <select name="LCM" class="lcm inp " id="LCM" required>
+                        <option value="" selected>select LCM</option>
+                    </select>
+                </div>
+            </div>
+            <div class="inpDiv">
+                <label for="DeductableAmount" class="f1">Deductible Amount:</label>
+                <div class="f2">
+                    <select name="DeductableAmount" class="DeductableAmount inp mulselect " id="DeductableAmount" required>
+                        <option value="" selected>select</option>
+                        <option value="0">0</option>
+                        <option value="1000">1000</option>
+                        <option value="5000">5000</option>
+                        <option value="10000">10000</option>
+                    </select>
+                </div>
+            </div>
+            <div class="inpDiv">
+                <label for="WChazardGroup" class="f1">WC Hazard Group:</label>
+                <div class="f2">
+                    <select name="WChazardGroup" class="WChazardGroup inp mulselect" id="WChazardGroup" required>
+                        <option value="" selected>select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="inpDiv">
+                <label class="safetyCredit" class="f1">Safety Credit</label>
+                <div class="f2">
+                    <div class="inpswitch">
+                        <label class="switch">
+                            <input type="checkbox" unchecked id="safetyCredit">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="inpDiv">
+                <label for="DiscountType" class="f1">Discount Type:</label>
+                <div class="f2">
+                    <select name="DiscountType" class="DiscountType inp mulselect" id="DiscountType" required>
+                        <option value="" selected>select</option>
+                        <option value="stock">stock</option>
+                        <option value="mutual">mutual</option>
+                    </select>
+                </div>
+            </div>
+            <div class="inpDiv">
+                <label for="CreditorDebit" class="f1">Scheduled Credit or Debit:</label>
+                <div class="f2">
+                    <input type="number" placeholder="Credit or Debit" class="CreditorDebit inp" id="CreditorDebit"
+                    min="0" max="1" step="0.01" required>
+                </div>
+            </div>
+            <div class="inpDiv">
+                <label for="ConstructionCredit" class="f1">Construction Credit:</label>
+                <div class="f2">
+                    <input type="number" placeholder="Construction Credit" class="ConstructionCredit inp"
+                        id="ConstructionCredit" min="-1" max="1" step="0.01" required>
+                </div>
+            </div>
+            <div class="inpDiv">
+                <label for="IncreasedLimits" class="f1">Increased Limits:</label>
+                <div class="f2">
+                    <select name="IncreasedLimits" class="IncreasedLimits inp mulselect" id="IncreasedLimits" required>
+                        <option value="" selected>select</option>
+                        <option value="100">100</option>
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                    </select>
+                </div>
+            </div>
+            <div class="inpDiv">
+                <label for="Discount" class="f1">Discount:</label>
+                <div class="f2">
+                    <div class="inpswitch">
+                        <label class="switch">
+                            <input type="checkbox" unchecked id="Discount">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inpDiv">
+                <label for="DiscountOverride" class="f1">Discount Override:</label>
+                <div class="f2">
+                    <input type="number" placeholder="Discount Override" class="DiscountOverride inp"
+                        id="DiscountOverride" min="0" max="1" step="0.01" required>
+                </div>
+            </div>
+            <div class="inpDiv">
+                <label for="ExpenceConstant" class="f1">Expense Constant:</label>
+                <div class="f2">
+                    <input type="number" placeholder="Expense Constant:" class="experienceModifier inp"
+                        id="ExpenceConstant" required>
+                </div>
+            </div>
+            <!-- ********************************** -->
+            <div style="padding: 10;">
+                <div class="container1">
+                    <span>Class Code</span>
+                    <div class="btn1" onclick="visible()">+</div>
+                </div>
+            </div>
+            <div style="padding: 10;">
+                <div class="container4" id="storefields"></div>
+            </div>
+            <div class="container2" id="fieldshow">
+                <div class="fix">
+
+                    <input class="form-control me-2" type="search" id="searchTxt" placeholder="Search"
+                        aria-label="Search">
+                    <div class="btn" onclick="hidefield()">&times;</div>
+                    <!-- <button class="btn btn-outline-success" type="submit" style="padding-inline: 1rem;padding-block: 0.5rem;border-radius: 0.3rem;border: none;background-image: linear-gradient(to top, rgb(156, 156, 242),rgb(106, 106, 207));
+                    color: white;box-shadow: 1px 3px 7px rgb(77, 76, 76);margin-left: 0.3rem;">GO</button> -->
+                </div>
+                <div class="container2-1" id="fields">
+                    
+                </div>
+            </div>
+            <div class="container3" id="inputFields"></div>
+            <!-- **************************************************** -->
+            <!-- <div class="estimateButton" onsubmit="myFunction()">ESTIMATE</div> -->
+            <input type="submit" value="ESTIMATE" class="estimateButton">
+            <!-- <div class="sendButton" onclick="openForm()">SEND</div> -->
+        </form>
+        <div class="resultDiv">
+            <div class="heading">Workers Compensation Premium Indication</div>
+            <div class="resultFields">Policy Effective Date: <span id="outputDate"
+                    style="padding-left: 20px;"></span></div>
+            <div class="classcode" id="nodeout">
+                <div class="items">
+                    <div class="code head">Code</div>
+                    <div class="ClassDesc head">Class Description</div>
+                    <div class="Payroll head">Payroll</div>
+                    <div class="Rate head">Rate</div>
+                    <div class="Premium head">Premium</div>
+                </div>
+            </div>
+            <div class="totalpay"><span> Total Payroll:</span> <span class="border totalamount" id="totalPaylode">$
+                    0</span></div>
+            <div class="output">
+                <div class="outputBox">
+                    <div class="first bolt">Manual Premium:</div>
+                    <div class="second border" id="ManualPremium">$ 0</div>
+                </div>
+                <br>
+                <div class="outputBox">
+                    <div class="first flex">
+                        <div class="first1">Limits Charge</div>
+                        <div class="none first2" id="LimitsCharge">1</div>
+                    </div>
+                    <div class="second" id="LimitsChargecal">$ 0</div>
+                </div>
+                <div class="outputBox">
+                    <div class="first bolt">Modifiable Premium</div>
+                    <div class="second border" id="Modifiable_Premium">$ 0</div>
+                </div>
+                <br>
+                <div class="outputBox">
+                    <div class="first flex">
+                        <div class="first1">2016 Experience Mod</div>
+                        <div class="none first2" id="expmodcal">1</div>
+                    </div>
+                    <div class="second" id="expmodcalval">$ 0</div>
+                </div>
+                <div class="outputBox">
+                    <div class="first bolt">Modified Premium:</div>
+                    <div class="second border" id="ModifiedPremium">$ 0</div>
+                </div>
+                <br>
+                <div class="outputBox">
+                    <div class="first flex">
+                        <div class="first1">Scheduled Credit/Debit</div>
+                        <div class="none first2" id="credit/debit">1</div>
+                    </div>
+                    <div class="second" id="ScheduleCreditorDebit">$ 0</div>
+                </div>
+                <div class="outputBox">
+                    <div class="first bolt">Sub Total:</div>
+                    <div class="second border" id="Subtotal">$ 0</div>
+                </div>
+                <br>
+                <div class="outputBox">
+                    <div class="first flex">
+                        <div class="first1">Safety Credit</div>
+                        <div class="none first2" id="safetycredit">1</div>
+                    </div>
+                    <div class="second" id="safetycreditval">$ 0</div>
+                </div>
+                <div class="outputBox">
+                    <div class="first flex">
+                        <div class="first1">Deductible Credit</div>
+                        <div class="none first2" id="DeductibleCredit">1</div>
+                    </div>
+                    <div class="second" id="DeductibleCreditval">$ 0</div>
+                </div>
+                <div class="outputBox">
+                    <div class="first flex">
+                        <div class="first1">Construction Credit</div>
+                        <div class="none first2" id="ConstructionCreditCal">1</div>
+                    </div>
+                    <div class="second" id="ConstructionCreditval">$ 0</div>
+                </div>
+                <div class="outputBox">
+                    <div class="first bolt">Sub Total:</div>
+                    <div class="second border" id="Subtotal2">$ 0</div>
+                </div>
+                <br>
+                <div class="outputBox">
+                    <div class="first flex">
+                        <div class="first1">Premium Discount</div>
+                        <div class="none first2" id="mulSub3">1</div>
+                    </div>
+                    <div class="second" id="mulSub3val">$ 0</div>
+                </div>
+                <div class="outputBox">
+                    <div class="first bolt ">Sub Total:</div>
+                    <div class="second border" id="Subtotal3">$ 0</div>
+                </div>
+                <br>
+                <div class="outputBox">
+                    <div class="first flex">
+                        <div class="first1">Terrorism(9740)</div>
+                        <div class="first2">0.02%</div>
+                    </div>
+                    <div class="second" id="ForeignTerrorism">$ 0</div>
+                </div>
+                <div class="outputBox">
+                    <div class="first flex">
+                        <div class="first1">Catastrophe(9741)</div>
+                        <div class="first2">0.01%</div>
+                    </div>
+                    <div class="second" id="DomesticTerrorism">$ 0</div>
+                </div>
+                <div class="outputBox">
+                    <div class="first bolt">Total Estimated Annual Premium:</div>
+                    <div class="second border" id="TotalEstimatedAnnualPremium">$ 0</div>
+                </div>
+                <br>
+                <div class="outputBox">
+                    <div class="first flex">
+                        <div class="first1">PA Assessmenr(0938)</div>
+                        <div class="first2">2.25%</div>
+                    </div>
+                    <div class="second" id="PAAssessment">$ 0</div>
+                </div>
+                <div class="outputBox">
+                    <div class="first flex">
+                        <div class="first1">Expense Constant</div>
+                        <div class="none first2">1</div>
+                    </div>
+                    <div class="second" id="ExpenseConstan">$ 0</div>
+                </div>
+                <div class="outputBox">
+                    <div class="first flex">
+                        <div class="first1">Agency Management Fee</div>
+                        <div class="none first2">1</div>
+                    </div>
+                    <div class="second" id="AgencyManagementFee"> $ 0</div>
+                </div>
+                <div class="outputBox">
+                    <div class="first bolt">Total Estimated Cost:</div>
+                    <div class="second border" id="TotalEstimatedCost">$ 0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function submitForm() {
+            //   fbq('track', 'Lead');
+            // Get the first form with the name
+            // Usually the form name is not repeated
+            // but duplicate names are possible in HTML
+            // Therefore to work around the issue, enforce the correct index
+            var frm = document.getElementsByName('contact-form')[0];
+            frm.submit(); // Submit the form
+            frm.reset();  // Reset all form data
+            return false; // Prevent page refresh
+        }
+    </script>
+    <script src="main.js"></script>
+    <script src="LCM.js"></script>
+    <script src="test.js"></script>
+</body>
+
+</html>
